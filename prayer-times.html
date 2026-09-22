@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-base="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Prayer Times · {{name}}</title>
+  <meta name="description" content="Daily adhan and iqamah times at Masjid Adam Islamic Centre, Mississauga, with a printable monthly timetable.">
+  <meta name="theme-color" content="#12233F">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="prayer">
+  <header class="site-header" id="siteHeader"></header>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="arabic arabic-title">مواقيت الصلاة</div>
+      <p class="kicker gold">Salah</p>
+      <h1>Prayer times</h1>
+      <p class="lead">Adhan and jama‘ah times at the masjid, calculated daily for Mississauga and updated by the committee through the seasons.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap pt-layout">
+      <aside class="pt-side">
+        <div class="today" id="todayCard" aria-live="polite"></div>
+        <div class="jumuah-box" id="jumuah"></div>
+      </aside>
+      <div>
+        <div class="print-head" id="printHead"></div>
+        <div class="month-head">
+          <div class="month-nav">
+            <button type="button" id="prevMonth" aria-label="Previous month"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <div><h2 id="monthTitle"></h2><div class="month-hijri" id="monthHijri"></div></div>
+            <button type="button" id="nextMonth" aria-label="Next month"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="month-nav no-print">
+            <button type="button" class="btn btn-outline btn-sm" id="thisMonth" style="width:auto;height:auto">This month</button>
+            <button type="button" class="btn btn-navy btn-sm" id="printBtn" style="width:auto;height:auto"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg> Print</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="month">
+            <thead>
+              <tr><th rowspan="2">Date</th><th class="group" colspan="2">Fajr</th><th class="group">Sunrise</th><th class="group" colspan="2">Dhuhr</th><th class="group" colspan="2">Asr</th><th class="group" colspan="2">Maghrib</th><th class="group" colspan="2">Isha</th></tr>
+              <tr><th class="sub">Adhan</th><th class="sub">Iqamah</th><th class="sub">Shurooq</th><th class="sub">Adhan</th><th class="sub">Iqamah</th><th class="sub">Adhan</th><th class="sub">Iqamah</th><th class="sub">Adhan</th><th class="sub">Iqamah</th><th class="sub">Adhan</th><th class="sub">Iqamah</th></tr>
+            </thead>
+            <tbody id="monthBody"></tbody>
+          </table>
+        </div>
+        <div class="legend"><span><i style="background:rgba(201,169,106,.3)"></i>Iqamah (jama‘ah) time</span><span><i style="background:rgba(31,107,78,.15)"></i>Friday</span><span><i style="background:rgba(201,169,106,.5)"></i>Today</span></div>
+        <div class="notes" id="notes"></div>
+        <div id="timetableImg"></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0" class="no-print">
+    <div class="wrap">
+      <div class="section-head"><p class="kicker">How it works</p><h2>Where these times come from</h2></div>
+      <div class="how" id="howGrid"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+  <script src="assets/js/prayer-calc.js"></script>
+  <script src="assets/js/defaults.js"></script>
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

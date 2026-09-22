@@ -1,0 +1,384 @@
+{
+  "version": 1,
+  "org": {
+    "name": "Masjid Adam",
+    "fullName": "Masjid Adam Islamic Centre",
+    "tagline": "A house of worship, learning and community in Mississauga.",
+    "address1": "1759 Bloor Street East",
+    "address2": "Mississauga, Ontario L4X 1S7",
+    "country": "Canada",
+    "entranceNote": "The entrance is on the west side of the building, beside the apartment building.",
+    "parkingNote": "Please park only in the designated masjid parking area. Parking is limited, so consider carpooling or walking when you can.",
+    "email": "masjidadamcentre@gmail.com",
+    "twitter": "https://twitter.com/masjid_adam",
+    "mapQuery": "1759 Bloor Street East, Mississauga, ON L4X 1S7",
+    "mapLink": "https://goo.gl/maps/T2W1utn4aDQ2",
+    "contacts": [
+      {
+        "name": "Br. Munawar",
+        "phone": "(416) 771-7999",
+        "role": "General enquiries & Qur’an class registration"
+      },
+      {
+        "name": "Br. Tariq",
+        "phone": "(647) 778-3771",
+        "role": "Qur’an class registration"
+      },
+      {
+        "name": "Br. Salman Raza",
+        "phone": "(416) 669-5863",
+        "role": "General enquiries"
+      }
+    ]
+  },
+  "home": {
+    "kicker": "In the name of Allah, the Most Gracious, the Most Merciful",
+    "heading": "Welcome to Masjid Adam",
+    "intro": "Masjid Adam Islamic Centre has served the Muslim community of east Mississauga for years: five daily prayers, two Friday congregations, Qur’an classes for children and adults, and a warm, open door for anyone who wishes to learn.",
+    "aboutHeading": "A small masjid with an open door",
+    "about": "We are a neighbourhood masjid on Bloor Street, tucked beside the Dixie Square apartments. Our prayer hall is simple and welcoming, with a wooden mihrab and minbar, a small library of Islamic books, and space for brothers and sisters.\n\nEveryone is welcome here — regulars, newcomers to the area, travellers passing through, and neighbours of every faith who are curious about Islam. If it is your first visit, our guide for visitors explains what to expect.",
+    "reminder": {
+      "arabic": "إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا",
+      "text": "Indeed, prayer has been decreed upon the believers at specified times.",
+      "source": "Qur’an 4:103"
+    }
+  },
+  "prayer": {
+    "lat": 43.6165,
+    "lng": -79.5878,
+    "timezone": "America/Toronto",
+    "method": "ISNA",
+    "asr": "Hanafi",
+    "adjust": {
+      "fajr": 0,
+      "sunrise": 0,
+      "dhuhr": -1,
+      "asr": -2,
+      "maghrib": -1,
+      "isha": -3
+    },
+    "hijriAdjust": 0,
+    "iqamahRules": [
+      {
+        "from": "2026-09-01",
+        "fajr": "05:45",
+        "dhuhr": "14:00",
+        "asr": "18:15",
+        "maghrib": "+5",
+        "isha": "21:30"
+      },
+      {
+        "from": "2026-09-04",
+        "fajr": "06:00",
+        "dhuhr": "14:00",
+        "asr": "18:00",
+        "maghrib": "+5",
+        "isha": "21:30"
+      },
+      {
+        "from": "2026-09-11",
+        "fajr": "06:00",
+        "dhuhr": "14:00",
+        "asr": "18:00",
+        "maghrib": "+5",
+        "isha": "21:15"
+      },
+      {
+        "from": "2026-09-18",
+        "fajr": "06:15",
+        "dhuhr": "14:00",
+        "asr": "17:45",
+        "maghrib": "+5",
+        "isha": "21:00"
+      },
+      {
+        "from": "2026-09-25",
+        "fajr": "06:15",
+        "dhuhr": "14:00",
+        "asr": "17:30",
+        "maghrib": "+5",
+        "isha": "20:45"
+      }
+    ],
+    "iqamahFallback": {
+      "fajr": "+30",
+      "dhuhr": "14:00",
+      "asr": "+20",
+      "maghrib": "+5",
+      "isha": "+15"
+    },
+    "jumuah": [
+      {
+        "label": "1st Jumu’ah",
+        "time": "14:00"
+      },
+      {
+        "label": "2nd Jumu’ah",
+        "time": "15:30"
+      }
+    ],
+    "notes": [
+      "Maghrib jama‘ah is held a few minutes after sunset.",
+      "Please arrive early for Jumu’ah — parking is limited."
+    ],
+    "timetableImage": "",
+    "timetableCaption": ""
+  },
+  "announcements": [
+    {
+      "id": "a1",
+      "date": "2026-09-01",
+      "pinned": true,
+      "title": "Maktab Qur’an classes — enrol your child",
+      "body": "Daily Qur’an and Islamic studies classes for boys and girls, 4:30 PM to 6:30 PM on weekdays. Correct makharij, proper pronunciation, Islamic etiquettes, short hadith and basic fiqh with experienced teachers.\n\nTo register, call Br. Munawar at (416) 771-7999.",
+      "image": "data/uploads/poster-maktab.jpg"
+    },
+    {
+      "id": "a2",
+      "date": "2026-09-01",
+      "pinned": false,
+      "title": "Hifz class — memorise the Qur’an",
+      "body": "A structured Hifz programme for boys, 6:00 PM to 7:30 PM on weekdays: makharij, sifat, memorisation techniques, revision and personalised support.\n\nCall (416) 771-7999 to enrol.",
+      "image": "data/uploads/poster-hifz.jpg"
+    },
+    {
+      "id": "a3",
+      "date": "2026-09-01",
+      "pinned": false,
+      "title": "Weekly Tafseer-ul-Qur’an with Imam Abdul Wali",
+      "body": "Join us every Sunday after Maghrib salah for tafseer of the Qur’an. Refreshments are served. All are welcome.",
+      "image": "data/uploads/poster-tafseer.jpg"
+    }
+  ],
+  "programs": [
+    {
+      "title": "Five daily prayers",
+      "arabic": "الصلوات الخمس",
+      "desc": "The masjid opens for all five congregational prayers every day. See today’s times on the prayer page.",
+      "when": "Daily",
+      "who": "Everyone",
+      "icon": "moon"
+    },
+    {
+      "title": "Jumu’ah (Friday) prayer",
+      "arabic": "صلاة الجمعة",
+      "desc": "Two Friday congregations so that everyone can attend, with an English khutbah.",
+      "when": "Fridays · 2:00 PM & 3:30 PM",
+      "who": "Everyone",
+      "icon": "jumuah"
+    },
+    {
+      "title": "Maktab — Qur’an for kids",
+      "arabic": "مكتب",
+      "desc": "Qur’an reading with correct pronunciation, Islamic etiquette, short hadith and basic fiqh for children.",
+      "when": "Weekdays · 4:30 – 6:30 PM",
+      "who": "Boys & girls",
+      "icon": "book",
+      "contact": "Br. Munawar (416) 771-7999 · Br. Tariq (647) 778-3771"
+    },
+    {
+      "title": "Hifz — Qur’an memorisation",
+      "arabic": "حفظ القرآن",
+      "desc": "A dedicated programme for memorising the Qur’an with regular revision (daur) and personal support.",
+      "when": "Weekdays · 6:00 – 7:30 PM",
+      "who": "Boys",
+      "icon": "book",
+      "contact": "Br. Munawar (416) 771-7999"
+    },
+    {
+      "title": "Sisters’ Qur’an programme",
+      "arabic": "حلقة الأخوات",
+      "desc": "Qur’an learning circle for sisters in a comfortable setting.",
+      "when": "Ask for the current schedule",
+      "who": "Sisters",
+      "icon": "circle"
+    },
+    {
+      "title": "Weekly Tafseer",
+      "arabic": "تفسير القرآن",
+      "desc": "Understanding the meaning of the Qur’an, presented by Imam Abdul Wali. Refreshments served.",
+      "when": "Sundays · after Maghrib",
+      "who": "Everyone",
+      "icon": "lamp"
+    },
+    {
+      "title": "Adult Tajweed class",
+      "arabic": "تجويد",
+      "desc": "Improve your recitation of the Qur’an with the rules of tajweed, at any level.",
+      "when": "Ask for the current schedule",
+      "who": "Adults",
+      "icon": "sound"
+    },
+    {
+      "title": "Ramadan at the masjid",
+      "arabic": "رمضان",
+      "desc": "Iftar is provided every evening of Ramadan for anyone who wishes to break their fast with us, followed by Taraweeh prayers each night.",
+      "when": "Every Ramadan",
+      "who": "Everyone",
+      "icon": "lantern"
+    },
+    {
+      "title": "Eid prayers",
+      "arabic": "صلاة العيد",
+      "desc": "Eid al-Fitr and Eid al-Adha prayers are held at the masjid. Times are announced each year.",
+      "when": "Eid al-Fitr & Eid al-Adha",
+      "who": "Everyone",
+      "icon": "star"
+    }
+  ],
+  "donate": {
+    "heading": "Support your masjid",
+    "intro": "Masjid Adam runs entirely on the generosity of the community. Your contributions cover the monthly expenses that keep the doors open — utilities, upkeep, and the Qur’an classes and programmes that serve hundreds of families.",
+    "etransferEmail": "masjidadamcentre@gmail.com",
+    "etransferNote": "Send an Interac e-Transfer from your bank to the email above. Add “Zakat”, “Sadaqah” or a purpose in the message if you wish.",
+    "onlineUrl": "",
+    "onlineLabel": "Donate online",
+    "otherMethods": "Cash and cheques can be handed to a committee member at the masjid, or placed in the donation box in the prayer hall. Cheques payable to “Masjid Adam Islamic Centre”.",
+    "uses": [
+      {
+        "title": "Keeping the lights on",
+        "text": "Heating, electricity, water and building upkeep — the everyday cost of a warm, clean prayer hall."
+      },
+      {
+        "title": "Qur’an education",
+        "text": "Teachers and materials for the Maktab, Hifz, sisters’ and adult classes."
+      },
+      {
+        "title": "Ramadan & Eid",
+        "text": "Nightly iftar for the community, Taraweeh arrangements and Eid prayers."
+      }
+    ],
+    "quote": {
+      "arabic": "مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ",
+      "text": "The example of those who spend their wealth in the way of Allah is like a seed of grain that sprouts seven ears; in every ear a hundred grains.",
+      "source": "Qur’an 2:261"
+    }
+  },
+  "learn": {
+    "intro": "Whether you grew up in the masjid or have never stepped inside one, this page is for you. It explains what happens here, why the prayer times change every day, and how to make the most of your visit.",
+    "visitorGuide": [
+      {
+        "title": "Everyone is welcome",
+        "text": "You do not need to be Muslim to visit. Come at any prayer time, or contact us to arrange a visit outside prayer hours."
+      },
+      {
+        "title": "Shoes off, phones silent",
+        "text": "Shoes are removed at the entrance and placed on the racks. Please keep phones on silent inside the prayer hall."
+      },
+      {
+        "title": "Dress modestly",
+        "text": "Loose clothing that covers the arms and legs is appreciated. Sisters are welcome to bring a headscarf; a few are available at the masjid."
+      },
+      {
+        "title": "During prayer",
+        "text": "If you arrive while prayer is in progress, please wait quietly at the back until it finishes. You are welcome to sit and observe."
+      },
+      {
+        "title": "Brothers and sisters",
+        "text": "There are separate prayer areas for brothers and sisters. Ask anyone at the door and they will point you the right way."
+      }
+    ],
+    "sections": [
+      {
+        "id": "adhan",
+        "title": "Adhan and Iqamah",
+        "arabic": "الأذان والإقامة",
+        "body": "The **adhan** is the call to prayer. It marks the moment a prayer’s time begins, and it is calculated from the position of the sun — which is why the times shift by a minute or two every day.\n\nThe **iqamah** (also called *jama‘ah* time) is when the congregation actually lines up to pray together. The masjid fixes these times so that people can plan their day; they are usually rounded to a convenient time a little after the adhan and are updated every week or two as the seasons change.\n\nOn our prayer page you will see both: the adhan time (when the prayer comes in) and the iqamah time (when we pray together)."
+      },
+      {
+        "id": "wudu",
+        "title": "How to perform wudu",
+        "arabic": "الوضوء",
+        "body": "Wudu is the washing done before prayer. Begin with the intention to purify yourself, then:\n\n1. Say *Bismillah* and wash both hands up to the wrists three times.\n2. Rinse the mouth three times.\n3. Clean the nose by sniffing water in and blowing it out, three times.\n4. Wash the whole face three times, from the hairline to the chin and ear to ear.\n5. Wash the right arm up to and including the elbow three times, then the left.\n6. Wipe the head once with wet hands, then wipe the ears.\n7. Wash the right foot up to and including the ankle three times, then the left.\n\nWudu is broken by using the toilet, passing wind, deep sleep and a few other things — after which it is simply repeated. Washing facilities are available at the masjid."
+      },
+      {
+        "id": "jumuah",
+        "title": "Friday prayer at Masjid Adam",
+        "arabic": "صلاة الجمعة",
+        "body": "Jumu’ah replaces the Dhuhr prayer on Fridays. It begins with a **khutbah** (sermon) in two parts, followed by a short two-rak‘ah prayer led by the imam.\n\nBecause our hall is small we hold **two Jumu’ah prayers**, at 2:00 PM and 3:30 PM, so that everyone has a chance to attend. Please arrive before the khutbah begins, listen quietly, and park only in the designated area — we share the street with our neighbours."
+      },
+      {
+        "id": "ramadan",
+        "title": "Ramadan, Eid and the Islamic year",
+        "arabic": "رمضان والعيد",
+        "body": "The Islamic (Hijri) calendar follows the moon, so each year is about eleven days shorter than the solar year and Islamic dates move earlier through the seasons.\n\n**Ramadan** is the ninth month, when Muslims fast from dawn (Fajr) to sunset (Maghrib). The masjid provides **iftar** — the sunset meal — every evening for anyone who wishes to break their fast with us, and holds **Taraweeh**, the special night prayers of Ramadan, after Isha.\n\nRamadan ends with **Eid al-Fitr**; about ten weeks later, at the time of the Hajj pilgrimage, comes **Eid al-Adha**. Eid prayers are held at the masjid in the morning and are announced beforehand. Islamic dates on this site are approximate and are confirmed by the sighting of the new moon."
+      },
+      {
+        "id": "giving",
+        "title": "Zakat and sadaqah",
+        "arabic": "الزكاة والصدقة",
+        "body": "**Zakat** is the obligatory annual charity — 2.5% of savings held for a year above a minimum threshold — and is one of the five pillars of Islam. **Sadaqah** is any voluntary charity, given at any time and in any amount.\n\nA **sadaqah jariyah** is a “continuing charity”: a gift whose benefit carries on, such as supporting a masjid or education. The Prophet ﷺ taught that when a person dies their deeds end except three — a continuing charity, beneficial knowledge, and a righteous child who prays for them. Supporting the masjid is one way to leave something that continues."
+      }
+    ],
+    "glossary": [
+      {
+        "term": "Masjid",
+        "def": "A mosque — literally “place of prostration”."
+      },
+      {
+        "term": "Salah",
+        "def": "The formal Islamic prayer, performed five times a day."
+      },
+      {
+        "term": "Rak‘ah",
+        "def": "One unit of prayer: standing, bowing and two prostrations."
+      },
+      {
+        "term": "Qibla",
+        "def": "The direction of prayer, towards the Ka‘bah in Makkah."
+      },
+      {
+        "term": "Mihrab",
+        "def": "The niche in the front wall showing the direction of the qibla."
+      },
+      {
+        "term": "Minbar",
+        "def": "The stepped pulpit from which the Friday sermon is given."
+      },
+      {
+        "term": "Khutbah",
+        "def": "The sermon delivered before the Friday and Eid prayers."
+      },
+      {
+        "term": "Imam",
+        "def": "The person who leads the prayer."
+      },
+      {
+        "term": "Wudu",
+        "def": "The ritual washing performed before prayer."
+      },
+      {
+        "term": "Iftar",
+        "def": "The meal that breaks the fast at sunset during Ramadan."
+      },
+      {
+        "term": "Taraweeh",
+        "def": "Extra congregational night prayers offered during Ramadan."
+      },
+      {
+        "term": "Hifz",
+        "def": "Memorising the whole Qur’an. Someone who has done so is a hafiz."
+      },
+      {
+        "term": "Tajweed",
+        "def": "The rules for reciting the Qur’an correctly and beautifully."
+      },
+      {
+        "term": "Tafseer",
+        "def": "Explanation and commentary on the meaning of the Qur’an."
+      },
+      {
+        "term": "Maktab",
+        "def": "A children’s Qur’an and Islamic studies class."
+      }
+    ]
+  },
+  "dates": {
+    "showAuto": true,
+    "custom": []
+  },
+  "settings": {
+    "githubOwner": "",
+    "githubRepo": ""
+  }
+}

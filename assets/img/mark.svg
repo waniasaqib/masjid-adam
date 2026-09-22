@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+  <!-- outer pointed arch -->
+  <path d="M12 114V58C12 32 30 16 50 8C70 16 88 32 88 58V114" stroke="#12233F" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- inner arch -->
+  <path d="M24 114V60C24 42 36 30 50 24C64 30 76 42 76 60V114" stroke="#12233F" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- floor line -->
+  <path d="M4 114H96" stroke="#12233F" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- finial -->
+  <path d="M50 8V1" stroke="#C9A96A" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="50" cy="-0.5" r="2" fill="#C9A96A"/>
+  <!-- crescent -->
+  <path d="M56 46A18 18 0 1 0 56 82A14 14 0 1 1 56 46Z" fill="#C9A96A"/>
+  <!-- star -->
+  <path d="M62 58l1.9 4 4.3.5-3.2 3 .9 4.3-3.9-2.2-3.9 2.2.9-4.3-3.2-3 4.3-.5z" fill="#12233F"/>
+</svg>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-base="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Learn · {{name}}</title>
+  <meta name="description" content="A friendly guide to the masjid: visiting for the first time, the five daily prayers, adhan and iqamah, wudu, Jumu’ah, Ramadan and a glossary.">
+  <meta name="theme-color" content="#12233F">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="learn">
+  <header class="site-header" id="siteHeader"></header>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="arabic arabic-title">تعلّم</div>
+      <p class="kicker gold">Learn</p>
+      <h1>A guide to the masjid</h1>
+      <p class="lead"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap-narrow">
+      <p class="lead" id="learnIntro" style="margin-top:-10px"></p>
+      <nav class="learn-nav" id="learnNav" aria-label="On this page"></nav>
+
+      <article class="article" id="visit">
+        <h2>Visiting for the first time<span class="arabic">أهلاً وسهلاً</span></h2>
+        <div id="visitGuide"></div>
+      </article>
+
+      <article class="article" id="prayers">
+        <h2>The five daily prayers<span class="arabic">الصلوات الخمس</span></h2>
+        <p style="color:var(--muted)">Muslims pray five times a day at times set by the movement of the sun. Each prayer is made up of units called rak‘ahs. On Fridays, the Jumu‘ah prayer takes the place of Dhuhr.</p>
+        <div class="table-wrap" style="box-shadow:none"><table class="prayer-table" id="prayerTable"></table></div>
+      </article>
+
+      <div id="articles"></div>
+
+      <article class="article" id="dates">
+        <h2>Upcoming Islamic dates<span class="arabic">التقويم الهجري</span></h2>
+        <p style="color:var(--muted)">The Islamic year follows the moon, so these dates are approximate until the new moon is sighted. Eid prayer times are announced at the masjid.</p>
+        <div class="dates" id="dates"></div>
+      </article>
+
+      <article class="article" id="glossary">
+        <h2>Glossary<span class="arabic">مصطلحات</span></h2>
+        <dl class="glossary" id="glossary"></dl>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+  <script src="assets/js/prayer-calc.js"></script>
+  <script src="assets/js/defaults.js"></script>
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
