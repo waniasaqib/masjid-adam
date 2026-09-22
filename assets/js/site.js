@@ -193,7 +193,7 @@
   }
   function niceDate(s) { const d = M.parseYmd(s); return d.y ? M.MONTHS[d.m - 1].slice(0, 3) + ' ' + d.d + ', ' + d.y : ''; }
   function newsCard(a) {
-    return '<article class="news-item">' + (a.image ? '<div class="thumb"><img src="' + esc(B + a.image) + '" alt="" loading="lazy"></div>' : '') +
+    return '<article class="news-item">' + (a.image ? '<div class="thumb"><img src="' + esc(a.image.startsWith('data:') ? a.image : B + a.image) + '" alt="" loading="lazy"></div>' : '') +
       '<div class="body"><time>' + niceDate(a.date) + (a.pinned ? ' <span class="pin">· Pinned</span>' : '') + '</time><h3>' + esc(a.title) + '</h3><p>' + esc(a.body.split(/\n+/)[0]) + '</p><a class="more" href="' + B + 'announcements.html#' + esc(a.id) + '">Read more →</a></div></article>';
   }
   function donateBand() {
@@ -219,7 +219,7 @@
     $('#jumuah').innerHTML = '<div class="label">Jumu‘ah · Friday prayer</div>' + (cfg.jumuah || []).map((j) => '<div class="row"><span>' + esc(j.label) + '</span><span>' + M.time24to12(j.time) + '</span></div>').join('');
     const notes = (cfg.notes || []).filter(Boolean);
     $('#notes').innerHTML = notes.map((n) => '<div class="note">' + ICON.info + '<span>' + esc(n) + '</span></div>').join('');
-    if (cfg.timetableImage) $('#timetableImg').innerHTML = '<figure class="timetable-img"><img src="' + esc(B + cfg.timetableImage) + '" alt="Monthly prayer timetable"><figcaption>' + esc(cfg.timetableCaption || 'Monthly timetable') + '</figcaption></figure>';
+    if (cfg.timetableImage) $('#timetableImg').innerHTML = '<figure class="timetable-img"><img src="' + esc(cfg.timetableImage.startsWith('data:') ? cfg.timetableImage : B + cfg.timetableImage) + '" alt="Monthly prayer timetable"><figcaption>' + esc(cfg.timetableCaption || 'Monthly timetable') + '</figcaption></figure>';
     $('#howGrid').innerHTML = [
       ['Adhan times follow the sun', 'Fajr, sunrise, Dhuhr, Asr, Maghrib and Isha are calculated for the masjid’s exact location (' + (+cfg.lat).toFixed(3) + ', ' + (+cfg.lng).toFixed(3) + ') using the ' + esc((window.PrayerCalc.METHODS[cfg.method] || {}).name || cfg.method) + ' method' + (cfg.asr === 'Hanafi' ? ', with Asr at the later (Hanafi) time' : '') + '. They shift by a minute or two each day.', 'sun'],
       ['Iqamah is set by the masjid', 'The jama‘ah (congregation) times are fixed by the committee so you can plan your day, and are updated as the seasons change. Maghrib is prayed a few minutes after sunset.', 'users'],
@@ -259,7 +259,7 @@
 
   pages.news = function () {
     const list = sortedNews();
-    $('#newsList').innerHTML = list.length ? list.map((a) => '<article class="news-item" id="' + esc(a.id) + '">' + (a.image ? '<div class="thumb"><img src="' + esc(B + a.image) + '" alt="" loading="lazy"></div>' : '') +
+    $('#newsList').innerHTML = list.length ? list.map((a) => '<article class="news-item" id="' + esc(a.id) + '">' + (a.image ? '<div class="thumb"><img src="' + esc(a.image.startsWith('data:') ? a.image : B + a.image) + '" alt=""></div>' : '') +
       '<div class="body"><time>' + niceDate(a.date) + (a.pinned ? ' <span class="pin">· Pinned</span>' : '') + '</time><h3>' + esc(a.title) + '</h3><div class="md">' + M.md(a.body) + '</div></div></article>').join('') : '<p class="lead">No announcements right now — check back soon.</p>';
     if (org.twitter) $('#twitterLink').innerHTML = '<a class="btn btn-outline" href="' + esc(org.twitter) + '" target="_blank" rel="noopener">' + ICON.globe + ' Follow us on X / Twitter</a>';
     if (location.hash) { const el = $(location.hash); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100); }
