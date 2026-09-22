@@ -6,6 +6,7 @@
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
   const esc = M.escape;
   const B = M.BASE;
+  const HOME = B || './';
   const page = document.body.dataset.page || 'home';
   const site = await M.load();
   const cfg = site.prayer;
@@ -53,7 +54,7 @@
     ['contact', 'Contact', 'contact.html']
   ];
   function brand(cls) {
-    return '<a class="brand ' + (cls || '') + '" href="' + B + '">' + MARK + '<span class="brand-text"><span class="brand-name">' + esc(org.name) + '</span><span class="brand-sub">Islamic Centre · Mississauga</span></span></a>';
+    return '<a class="brand ' + (cls || '') + '" href="' + HOME + '">' + MARK + '<span class="brand-text"><span class="brand-name">' + esc(org.name) + '</span><span class="brand-sub">Islamic Centre · Mississauga</span></span></a>';
   }
   function renderHeader() {
     const h = $('#siteHeader');
@@ -61,7 +62,7 @@
     h.innerHTML = '<div class="wrap">' + brand() +
       '<button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>' +
       '<nav class="nav" id="nav" aria-label="Main">' +
-        NAV.map(([k, l, href]) => '<a href="' + B + (href || '') + '"' + (k === page ? ' class="active" aria-current="page"' : '') + '>' + l + '</a>').join('') +
+        NAV.map(([k, l, href]) => '<a href="' + (href ? B + href : HOME) + '"' + (k === page ? ' class="active" aria-current="page"' : '') + '>' + l + '</a>').join('') +
         '<a class="btn btn-green btn-sm" href="' + B + 'donate.html">' + ICON.gift + ' Donate</a>' +
       '</nav></div>';
     $('#navToggle').addEventListener('click', () => {
@@ -77,7 +78,7 @@
     f.innerHTML = '<div class="wrap"><div class="cols">' +
       '<div>' + brand() + '<p>' + esc(org.address1) + '<br>' + esc(org.address2) + '</p><p><a href="mailto:' + esc(org.email) + '">' + esc(org.email) + '</a></p></div>' +
       '<div><h4>Today’s jama‘ah</h4><div class="footer-times">' + times + '</div></div>' +
-      '<div><h4>Pages</h4><ul>' + NAV.map(([k, l, href]) => '<li><a href="' + B + (href || '') + '">' + l + '</a></li>').join('') + '<li><a href="' + B + 'donate.html">Donate</a></li></ul></div>' +
+      '<div><h4>Pages</h4><ul>' + NAV.map(([k, l, href]) => '<li><a href="' + (href ? B + href : HOME) + '">' + l + '</a></li>').join('') + '<li><a href="' + B + 'donate.html">Donate</a></li></ul></div>' +
       '<div><h4>Connect</h4><ul>' +
         (org.twitter ? '<li><a href="' + esc(org.twitter) + '" target="_blank" rel="noopener">Twitter / X</a></li>' : '') +
         '<li><a href="' + esc(org.mapLink || ('https://maps.google.com/?q=' + encodeURIComponent(org.mapQuery))) + '" target="_blank" rel="noopener">Directions</a></li>' +
