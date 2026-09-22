@@ -114,10 +114,10 @@
     return M.normalize(null);
   }
   const isDirty = () => JSON.stringify(draft) !== JSON.stringify(published);
-  function setStatus(text, cls) { const s = $('#status'); s.className = 'status ' + (cls || ''); s.querySelector('span').textContent = text; }
+  function setStatus(text, cls, short) { const s = $('#status'); s.className = 'status ' + (cls || ''); s.querySelector('span').textContent = text; s.querySelector('small').textContent = short || text; }
   function refreshStatus() {
-    if (isDirty()) setStatus('Unpublished changes — saved as a draft in this browser', 'dirty');
-    else setStatus('Everything is published', '');
+    if (isDirty()) setStatus('Unpublished changes — saved as a draft in this browser', 'dirty', 'Draft saved');
+    else setStatus('Everything is published', '', 'Published');
     $('#discardBtn').disabled = !isDirty();
   }
   function save() {
