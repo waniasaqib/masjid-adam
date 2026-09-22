@@ -50,7 +50,7 @@
     ['programs', 'Programs', 'programs.html'],
     ['news', 'Announcements', 'announcements.html'],
     ['learn', 'Learn', 'learn.html'],
-    ['contact', 'Visit & Contact', 'contact.html']
+    ['contact', 'Contact', 'contact.html']
   ];
   function brand(cls) {
     return '<a class="brand ' + (cls || '') + '" href="' + B + '">' + MARK + '<span class="brand-text"><span class="brand-name">' + esc(org.name) + '</span><span class="brand-sub">Islamic Centre · Mississauga</span></span></a>';

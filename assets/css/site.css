@@ -93,7 +93,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .brand-name { font-family: var(--serif); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.01em; }
 .brand-sub { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .nav { display: flex; align-items: center; gap: 4px; }
-.nav a { padding: 9px 13px; border-radius: 999px; font-size: 0.92rem; font-weight: 600; color: var(--navy); text-decoration: none !important; transition: background 0.2s; }
+.nav a { white-space: nowrap; padding: 9px 12px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: var(--navy); text-decoration: none !important; transition: background 0.2s; }
 .nav a:hover { background: rgba(18, 35, 63, 0.06); }
 .nav a.active { background: var(--navy); color: #fff; }
 .nav .btn { margin-left: 8px; }
@@ -112,7 +112,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 }
 .hero::before { content: ''; position: absolute; inset: 0; background: var(--pattern); background-size: 96px 96px; opacity: 0.09; pointer-events: none; mix-blend-mode: screen; }
 .hero::after { content: ''; position: absolute; inset: auto 0 0; height: 40%; background: linear-gradient(180deg, transparent, rgba(12, 23, 48, 0.55)); pointer-events: none; }
-.hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 440px); gap: clamp(28px, 5vw, 72px); align-items: center; }
 .hero-text .bismillah { width: min(100%, 300px); height: auto; opacity: 0.9; margin-bottom: 26px; }
 .hero-text h1 { color: #fff; margin-bottom: 18px; }
 .hero-text h1 em { font-style: italic; color: var(--gold-2); font-weight: 500; }
@@ -398,6 +398,10 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .nav a { padding: 8px 9px; font-size: 0.85rem; }
+  .brand-sub { display: none; }
+}
 @media (max-width: 1000px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .hero-text { text-align: center; }
