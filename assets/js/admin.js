@@ -75,16 +75,14 @@
     const rec = authRecord();
     const body = $('#lockBody');
     if (!rec) {
-      body.innerHTML = '<form id="setupForm"><p class="hint">This is the first time the admin has been opened in this browser. Choose a password to protect it here.</p>' +
+      body.innerHTML = '<form id="setupForm"><p class="hint">This is the first time the admin has been opened in this browser. Choose a password to protect it here — remember it, there is no reset by email.</p>' +
         '<label class="field"><span>Admin password</span><input type="password" id="pw1" autocomplete="new-password" required minlength="6"></label>' +
-        '<label class="field"><span>Repeat password</span><input type="password" id="pw2" autocomplete="new-password" required minlength="6"></label>' +
         '<p class="err" id="err"></p><button class="btn btn-navy" type="submit">Set up admin</button>' +
         '<p class="hint">You will add the GitHub connection (needed to publish) in Settings.</p></form>';
       $('#setupForm').addEventListener('submit', async (e) => {
         e.preventDefault();
-        const a = $('#pw1').value, b = $('#pw2').value;
+        const a = $('#pw1').value;
         if (a.length < 6) return ($('#err').textContent = 'Use at least 6 characters.');
-        if (a !== b) return ($('#err').textContent = 'The passwords do not match.');
         await setPassword(a);
         unlock();
       });
@@ -447,7 +445,7 @@
         '<div class="fields">' + field('GitHub username / owner', 'settings.githubOwner', { placeholder: host.endsWith('github.io') ? host.split('.')[0] : 'e.g. waniasaqib' }) + field('Repository name', 'settings.githubRepo', { placeholder: 'e.g. masjid-adam' }) +
         '<label class="field wide"><span>Personal access token</span><input type="password" id="tokenInput" value="' + esc(secrets.token || '') + '" placeholder="github_pat_…" autocomplete="off"><small>' + (secrets.token ? 'A token is saved on this device.' : 'No token saved yet.') + '</small></label></div>' +
         '<div class="btn-row"><button type="button" class="btn btn-navy btn-sm" id="saveToken">Save token</button><button type="button" class="btn btn-outline btn-sm" id="testToken">Test connection</button></div><p class="sub" id="tokenMsg" style="margin-top:10px"></p>') +
-      card('Change password', 'Only for this browser. Other devices set their own password when the admin is first opened there.', '<div class="fields">' + '<label class="field"><span>New password</span><input type="password" id="np1" autocomplete="new-password"></label><label class="field"><span>Repeat</span><input type="password" id="np2" autocomplete="new-password"></label></div><div class="btn-row"><button type="button" class="btn btn-navy btn-sm" id="changePw">Change password</button></div>') +
+      card('Change password', 'Only for this browser. Other devices set their own password when the admin is first opened there.', '<div class="fields">' + '<label class="field"><span>New password</span><input type="password" id="np1" autocomplete="new-password"></label></div><div class="btn-row"><button type="button" class="btn btn-navy btn-sm" id="changePw">Change password</button></div>') +
       card('Backup', 'Download everything (questions, texts, settings) as a file, or restore from one.', '<div class="btn-row"><button type="button" class="btn btn-outline btn-sm" id="exportBtn">Download site.json</button><button type="button" class="btn btn-outline btn-sm" id="importBtn">Restore from file…</button><input type="file" id="importFile" accept="application/json,.json" hidden></div>');
     $('#saveToken').addEventListener('click', async () => { secrets.token = $('#tokenInput').value.trim(); await saveSecrets(); toast(secrets.token ? 'Token saved on this device' : 'Token removed'); });
     $('#testToken').addEventListener('click', async () => {
@@ -455,7 +453,7 @@
       try { const r = await gh('/repos/' + repoPath(), $('#tokenInput').value.trim()); const j = await r.json(); msg.textContent = r.ok ? '✓ Connected to ' + j.full_name + (j.permissions && j.permissions.push ? ' with write access.' : ' — but the token cannot write. Check Contents: Read and write.') : '✗ ' + (j.message || r.status); }
       catch (e) { msg.textContent = '✗ ' + e.message; }
     });
-    $('#changePw').addEventListener('click', async () => { const a = $('#np1').value, b = $('#np2').value; if (a.length < 6) return toast('Use at least 6 characters'); if (a !== b) return toast('Passwords do not match'); await setPassword(a); $('#np1').value = $('#np2').value = ''; toast('Password changed'); });
+    $('#changePw').addEventListener('click', async () => { const a = $('#np1').value; if (a.length < 6) return toast('Use at least 6 characters'); await setPassword(a); $('#np1').value = ''; toast('Password changed'); });
     $('#exportBtn').addEventListener('click', () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(draft, null, 2)], { type: 'application/json' })); a.download = 'site.json'; a.click(); });
     $('#importBtn').addEventListener('click', () => $('#importFile').click());
     $('#importFile').addEventListener('change', async (e) => { const f = e.target.files[0]; if (!f) return; try { draft = M.normalize(JSON.parse(await f.text())); save(); $$('.view').forEach((v) => delete v.dataset.rendered); rerenderView(); toast('Restored — press Publish to make it live'); } catch (err) { toast('That file could not be read'); } });
