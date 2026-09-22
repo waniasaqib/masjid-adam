@@ -414,7 +414,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
   .about .arch { max-width: 420px; margin-inline: auto; }
   .grid-3, .news, .how, .glossary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-footer .cols { grid-template-columns: 1fr 1fr; }
-  .pt-layout { grid-template-columns: 1fr; }
+  .pt-layout { grid-template-columns: minmax(0, 1fr); }
   .pt-side { position: static; }
   .news-full .news-item { flex-direction: column; }
   .news-full .thumb { width: 100%; aspect-ratio: 3 / 2; }
