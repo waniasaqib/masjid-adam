@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Admin · Masjid Adam</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#12233F">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&family=Amiri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- Lock screen -->
+  <div class="lock" id="lock">
+    <div class="lock-card">
+      <div class="lock-mark" id="lockMark"></div>
+      <h1>Masjid Adam <span>Admin</span></h1>
+      <div id="lockBody"></div>
+    </div>
+  </div>
+
+  <!-- App -->
+  <div class="app" id="app" hidden>
+    <aside class="side">
+      <a class="side-brand" href="../"><span id="sideMark"></span><span><b>Masjid Adam</b><small>Admin</small></span></a>
+      <nav class="side-nav" id="sideNav">
+        <button data-view="dashboard" class="on" type="button">Dashboard</button>
+        <button data-view="prayer" type="button">Prayer times</button>
+        <button data-view="news" type="button">Announcements</button>
+        <button data-view="programs" type="button">Programs</button>
+        <button data-view="home" type="button">Home page</button>
+        <button data-view="org" type="button">Contact &amp; address</button>
+        <button data-view="donate" type="button">Donations</button>
+        <button data-view="learn" type="button">Learn page</button>
+        <button data-view="dates" type="button">Islamic dates</button>
+        <button data-view="settings" type="button">Settings</button>
+      </nav>
+      <div class="side-foot">
+        <a class="side-link" href="../?preview=1" target="_blank">Preview site ↗</a>
+        <button class="side-link" id="lockBtn" type="button">Lock</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <button class="side-toggle" id="sideToggle" type="button" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <div class="status" id="status"><i></i><span>Loading…</span></div>
+        <div class="top-actions">
+          <button class="btn btn-outline btn-sm" id="discardBtn" type="button">Discard changes</button>
+          <button class="btn btn-green btn-sm" id="publishBtn" type="button">Publish</button>
+        </div>
+      </div>
+      <div class="views" id="views"></div>
+    </main>
+  </div>
+
+  <div class="modal" id="modal" hidden><div class="modal-card" id="modalCard"></div></div>
+  <div class="toast" id="toast"></div>
+
+  <script src="../assets/js/prayer-calc.js"></script>
+  <script src="../assets/js/defaults.js"></script>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
