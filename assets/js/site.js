@@ -159,21 +159,20 @@
   pages.home = function () {
     const h = site.home;
     $('#heroText').innerHTML = '<img class="bismillah" src="' + B + 'assets/img/bismillah-gold.png" alt="Bismillah ir-Rahman ir-Rahim">' +
-      '<p class="kicker gold">' + esc(h.kicker) + '</p><h1>' + esc(h.heading).replace(/Masjid Adam/, '<em>Masjid Adam</em>') + '</h1><p class="lead">' + esc(h.intro) + '</p>' +
-      '<div class="hero-actions"><a class="btn btn-gold" href="' + B + 'prayer-times.html">' + ICON.clock + ' Prayer timetable</a><a class="btn btn-outline" href="' + B + 'learn.html">New here? Start with our guide</a></div>' +
+      '<p class="kicker gold">' + esc(h.kicker) + '</p><h1>' + esc(h.heading).replace(/Masjid Adam/, '<em>Masjid Adam</em>') + '</h1>' + (h.intro ? '<p class="lead">' + esc(h.intro) + '</p>' : '') +
+      '<div class="hero-actions"><a class="btn btn-gold" href="' + B + 'prayer-times.html">' + ICON.clock + ' Prayer timetable</a><a class="btn btn-outline" href="' + B + 'learn.html#visit">Visiting for the first time?</a></div>' +
       '<div class="hero-meta"><span><b>' + esc(org.address1) + '</b>, Mississauga</span><span>Jumu‘ah <b>' + (cfg.jumuah || []).map((j) => M.time24to12(j.time)).join(' & ') + '</b></span></div>';
     $('#todayCard').innerHTML = todayCard();
     dayArc($('#dayArc'));
 
-    $('#aboutText').innerHTML = '<p class="kicker">About the masjid</p><h2>' + esc(h.aboutHeading) + '</h2><div class="prose">' + M.md(h.about) + '</div>' +
-      '<div class="facts"><div class="fact"><b>5</b><span>daily congregations</span></div><div class="fact"><b>' + (cfg.jumuah || []).length + '</b><span>Friday prayers</span></div><div class="fact"><b>' + site.programs.length + '</b><span>programs & classes</span></div></div>';
+    $('#aboutText').innerHTML = '<p class="kicker">About the masjid</p><h2>' + esc(h.aboutHeading) + '</h2><div class="prose">' + M.md(h.about) + '</div>';
 
-    $('#programsGrid').innerHTML = site.programs.slice(0, 6).map(programCard).join('');
+    $('#programsGrid').innerHTML = site.programs.slice(0, 3).map(programCard).join('');
     const r = h.reminder;
     $('#reminder').innerHTML = '<div class="wrap"><div class="arabic">' + esc(r.arabic) + '</div><p class="text">“' + esc(r.text) + '”</p><div class="src">' + esc(r.source) + '</div></div>';
     const news = sortedNews().slice(0, 3);
     $('#newsGrid').innerHTML = news.length ? news.map(newsCard).join('') : '<p class="lead">No announcements right now — check back soon.</p>';
-    $('#learnGrid').innerHTML = [
+    if ($('#learnGrid')) $('#learnGrid').innerHTML = [
       ['Visiting for the first time', 'What to expect, what to wear, and where to go — for anyone curious about the masjid.', 'door', 'learn.html#visit'],
       ['Why prayer times change daily', 'The adhan follows the sun; the iqamah is set by the masjid. Here is how both work.', 'sun', 'learn.html#adhan'],
       ['How to perform wudu', 'The washing before prayer, step by step.', 'circle', 'learn.html#wudu']
@@ -181,7 +180,7 @@
     $('#donateBand').innerHTML = donateBand();
     $('#visit').innerHTML = visitBlock();
     setInterval(() => { $('#todayCard').innerHTML = todayCard(); dayArc($('#dayArc')); }, 30000);
-    if ('ResizeObserver' in window) new ResizeObserver(() => dayArc($('#dayArc'))).observe($('#dayArc'));
+    if ('ResizeObserver' in window && $('#dayArc')) new ResizeObserver(() => dayArc($('#dayArc'))).observe($('#dayArc'));
   };
 
   function programCard(p) {

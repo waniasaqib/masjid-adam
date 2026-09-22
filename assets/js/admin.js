@@ -393,7 +393,7 @@
   /* ----- Home ----- */
   views.home = function (el) {
     el.innerHTML = head('Home page', 'The words on the front page.') +
-      card('Welcome', '', '<div class="fields">' + field('Small line above the title', 'home.kicker', { wide: true }) + field('Title', 'home.heading', { wide: true, help: 'The words “Masjid Adam” are highlighted automatically.' }) + field('Introduction', 'home.intro', { type: 'textarea', wide: true }) + '</div>') +
+      card('Welcome', '', '<div class="fields">' + field('Small line above the title', 'home.kicker', { wide: true }) + field('Title', 'home.heading', { wide: true, help: 'The words “Masjid Adam” are highlighted automatically.' }) + field('Introduction (optional — leave empty for a cleaner front page)', 'home.intro', { type: 'textarea', wide: true }) + '</div>') +
       card('About section', '', '<div class="fields">' + field('Heading', 'home.aboutHeading', { wide: true }) + field('Text', 'home.about', { type: 'textarea', wide: true, tall: true, help: 'Leave a blank line between paragraphs.' }) + '</div>') +
       card('Reminder band', 'A verse or hadith shown across the middle of the home page.', '<div class="fields">' + field('Arabic', 'home.reminder.arabic', { wide: true, arabic: true }) + field('Translation', 'home.reminder.text', { type: 'textarea', wide: true }) + field('Source', 'home.reminder.source', { placeholder: 'e.g. Qur’an 4:103' }) + '</div>');
   };
